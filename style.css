@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* background: linear-gradient(to left, #555, #33ffd8, rgba(0, 0, 0, 0.2)); */
+    background-image: url(patrick-tomasso-QMDap1TAu0g-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#title {
+    z-index: 9;
+    position: absolute;
+    right: 70px;
+    bottom: 40px;
+    font-weight: 800;
+    animation: neon .5s linear infinite, bounce-in-right 1.5s ease-in-out alternate both;
+    font-size: 32px;
+    font-family: 'Courgette', cursive;
+    color: #ccc;
+
+}
+
+@keyframes neon {
+    0% {
+        text-shadow: 0 0 5px #3D7B97, 0 0 10px #3D7B97;
+    }
+
+    50% {
+        text-shadow: 0 0 10px blue, 0 0 20px blue;
+    }
+
+    100% {
+        text-shadow: 0 0 15px blueviolet, 0 0 10px blueviolet;
+    }
+}
+
+
+
+.calculator {
+    -webkit-animation: bounce-in-right 1.1s ease-in-out alternate both;
+    animation: bounce-in-right 1.1s ease-in-out alternate both;
+}
+
+@-webkit-keyframes bounce-in-right {
+    0% {
+        -webkit-transform: translateX(600px);
+        transform: translateX(600px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    38% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        opacity: 1;
+    }
+
+    55% {
+        -webkit-transform: translateX(68px);
+        transform: translateX(68px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    72% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    81% {
+        -webkit-transform: translateX(32px);
+        transform: translateX(32px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    90% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    95% {
+        -webkit-transform: translateX(8px);
+        transform: translateX(8px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}
+
+@keyframes bounce-in-right {
+    0% {
+        -webkit-transform: translateX(600px);
+        transform: translateX(600px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        opacity: 0;
+    }
+
+    38% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+        opacity: 1;
+    }
+
+    55% {
+        -webkit-transform: translateX(68px);
+        transform: translateX(68px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    72% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    81% {
+        -webkit-transform: translateX(32px);
+        transform: translateX(32px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    90% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    95% {
+        -webkit-transform: translateX(8px);
+        transform: translateX(8px);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}
+
+.calculator {
+    box-shadow: 0px 0px 20px 0px #808080;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 15px;
+    z-index: 999;
+    position: relative;
+    z-index: -0;
+}
+
+.calculator form input {
+    border: 0;
+    outline: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1);
+    background: #3a4452;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    /* transition: all ease 0.3s; */
+    cursor: pointer;
+    margin: 10px;
+    scale: 1;
+
+
+}
+
+.calculator form input[type="button"]:hover {
+    scale: 1.1;
+    box-shadow: 0 0 10px 0;
+    transition: 0.3s;
+    background-color: #3D7B97;
+
+}
+
+.calculator form input:active {
+    transform: scale(0.9);
+    box-shadow: 0 0 -10px 0 #ccc;
+    background-color: #2f3640;
+    color: #fff;
+
+    /* transition: 0.1s; */
+}
+
+
+form .display {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+form .display input {
+    /* color: red; */
+    /* position: absolute; */
+    text-align: right;
+    /* direction: rtl; */
+    flex: 1;
+    font-size: 45px;
+    box-shadow: none;
+    padding-right: 10px;
+    padding-left: 10px;
+
+
+
+}
+
+form .display input:active {
+    transform: none;
+}
+
+form .display input::placeholder {
+    font-size: 25px;
+    position: absolute;
+    top: 25%;
+    right: 20%;
+
+}
+
+form .display input:hover {
+    cursor: auto;
+    background-color: #3a4452;
+    color: #fff;
+}
+
+form input.equal {
+    width: 145px;
+}
+
+form input.operator {
+    background-color: #2f3640;
+    color: #33ffd8;
+
+}
+
+form input.operator:hover {
+    background-color: #2f3640;
+    color: #fff;
+}
+
+form input.operator:active {
+    background-color: #3a4452;
+}
