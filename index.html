@@ -12,10 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Calculator</title>
     <link rel="icon" type="image/png"
-        href="./png-clipart-computer-icons-calculator-calculation-calculator-blue-electronics.png" />
+        href="Calculator.png" />
 
     <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Calculator.css">
 </head>
 
 <body>
@@ -28,8 +28,8 @@
                         maxlength="30">
                 </div>
                 <div>
-                    <input type="button" value="AC" onclick="display.value = '' " class="operator">
-                    <input type="button" value="DE" onclick="display.value = display.value.slice(0,-1)"
+                    <input type="button" value="AC" id="clear" onclick="display.value = '' " class="operator">
+                    <input type="button" value="DE" id="clear" onclick="display.value = display.value.slice(0,-1)"
                         class="operator">
                     <input type="button" value="." onclick="display.value += '.' " class="operator">
                     <input type="button" value="/" onclick="display.value += '/' " class="operator">
