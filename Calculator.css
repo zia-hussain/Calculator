@@ -7,6 +7,7 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -41,11 +42,12 @@ body {
     }
 
     50% {
-        text-shadow: 0 0 10px blue, 0 0 20px blue;
+        text-shadow: 0 0 10px #33ffd8, 0 0 20px #33ffd8;
+        scale: 1.02;
     }
 
     100% {
-        text-shadow: 0 0 15px blueviolet, 0 0 10px blueviolet;
+        text-shadow: 0 0 15px #2f3640, 0 0 10px #2f3640;
     }
 }
 
@@ -232,18 +234,13 @@ form .display {
 }
 
 form .display input {
-    /* color: red; */
-    /* position: absolute; */
     text-align: right;
-    /* direction: rtl; */
     flex: 1;
     font-size: 45px;
     box-shadow: none;
     padding-right: 10px;
     padding-left: 10px;
-
-
-
+    
 }
 
 form .display input:active {
@@ -253,8 +250,9 @@ form .display input:active {
 form .display input::placeholder {
     font-size: 25px;
     position: absolute;
-    top: 25%;
+    top: 28%;
     right: 20%;
+    color: #828282;
 
 }
 
@@ -264,25 +262,23 @@ form .display input:hover {
     color: #fff;
 }
 
-form input.equal {
-    width: 145px;
-}
-
 form input.operator {
     background-color: #2f3640;
     color: #33ffd8;
+        /* box-shadow: 0 0 10px 0;   */
 
 }
 
 form input.operator:hover {
     background-color: #2f3640;
-    color: #fff;
+    color: #33ffd8;
+        box-shadow: 0 0 10px 0;
 }
 
 form input.operator:active {
     background-color: #3a4452;
 }
-
+/* =====================================FOr HOvering animation on speacil opertors ==================================== */
 #equals
  {
     --clr-font-main: hsla(0 0% 20% / 100);
@@ -292,8 +288,8 @@ form input.operator:active {
     --radii: 50px;
     cursor: pointer;
     padding: 0.9em 1.4em;
-    min-width: 120px;
-    min-height: 44px;
+    /* min-width: 120px;
+    min-height: 44px; */
     font-size: var(--size, 1rem);
     font-family: "Segoe UI", system-ui, sans-serif;
     font-weight: 500;
@@ -308,11 +304,12 @@ form input.operator:active {
 
 #equals:hover {
     background-position: right top;
+        box-shadow: 0 0 10px 0;
 }
 
 #equals:is(:focus, :focus-visible, :active) {
     outline: none;
-    box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+        box-shadow: 0 0 10px 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -326,7 +323,7 @@ form input.operator:active {
         --clr-font-main: hsla(0 0% 20% / 100);
         --btn-bg-1: #3D7B97;
         --btn-bg-2: #3a4452;
-        --btn-bg-color: hsla(360 100% 100% / 1);
+        /* --btn-bg-color: hsla(360 100% 100% / 1); */
         --radii: 50px;
         cursor: pointer;
         padding-right: 10px;
@@ -345,11 +342,13 @@ form input.operator:active {
 
         #clear:hover {
             background-position: right top;
+        box-shadow: 0 0 10px 0;
         }
     
         #clear:is(:focus, :focus-visible, :active) {
             outline: none;
-            box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2);
+        box-shadow: 0 0 10px 0;
+            /* box-shadow: 0 0 0 3px var(--btn-bg-color), 0 0 0 6px var(--btn-bg-2); */
         }
     
         @media (prefers-reduced-motion: reduce) {
