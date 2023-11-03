@@ -28,8 +28,8 @@
                         maxlength="30">
                 </div>
                 <div>
-                    <input type="button" value="AC" onclick="display.value = '', clearError() " class="operator">
-                    <input type="button" value="DE" onclick="display.value = display.value.slice(0,-1), clearError()"
+                    <input type="button" id="clear" value="AC" onclick="display.value = '', clearError() " class="operator">
+                    <input type="button" id="clear" value="DE" onclick="display.value = display.value.slice(0,-1), clearError()"
                         class="operator">
                     <input type="button" value="." onclick="display.value += '.' " class="operator">
                     <input type="button" value="/" onclick="display.value += '/' " class="operator">
