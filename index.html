@@ -11,16 +11,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Calculator</title>
-    <!-- <link rel="icon" type="png"
-        href="title.png" /> -->
-<link rel="shortcut icon" href="./calculator-minimalistic-svgrepo-com.svg" type="image/x-icon">
-    <!-- <script src="script.js"></script> -->
+    <link rel="icon" type="image/png" href="calculator-minimalistic-svgrepo-com.svg" />
+
+    <script src="script.js"></script>
     <link rel="stylesheet" href="Calculator.css">
 </head>
 
 <body>
+
     <div class="container">
-        <h1 class="title" id="title">"Calculator-By-Anonymous"</h1>
+        <h1 class="desktop" id="title">"Calculator-By-Anonymous"</h1>
         <div class="calculator">
             <form>
                 <div class="display">
@@ -28,90 +28,73 @@
                         maxlength="30">
                 </div>
                 <div>
-                    <input type="button" value="AC" id="clear" onclick="display.value = '' " class="operator">
-                    <input type="button" value="DE" id="clear" onclick="display.value = display.value.slice(0,-1)"
+                    <input type="button" value="AC" onclick="display.value = '', clearError() " class="operator">
+                    <input type="button" value="DE" onclick="display.value = display.value.slice(0,-1), clearError()"
                         class="operator">
-                    <input type="button" value="%" id="modulus" onclick="display.value += '%'" class="operator">
+                    <input type="button" value="." onclick="display.value += '.' " class="operator">
                     <input type="button" value="/" onclick="display.value += '/' " class="operator">
                 </div>
                 <div>
-                    <input type="button" value="7" onclick="evaluateNumber(7) ">
-                    <input type="button" value="8" onclick="evaluateNumber(8) ">
-                    <input type="button" value="9" onclick="evaluateNumber(9)">
+                    <input type="button" value="7" onclick="display.value += '7' ">
+                    <input type="button" value="8" onclick="display.value += '8' ">
+                    <input type="button" value="9" onclick="display.value += '9' ">
                     <input type="button" value="*" onclick="display.value += '*' " class="operator">
                 </div>
                 <div>
-                    <input type="button" value="4" onclick="evaluateNumber(4)">
-                    <input type="button" value="5" onclick="evaluateNumber(5)">
-                    <input type="button" value="6" onclick="evaluateNumber(6)">
+                    <input type="button" value="4" onclick="display.value += '4' ">
+                    <input type="button" value="5" onclick="display.value += '5' ">
+                    <input type="button" value="6" onclick="display.value += '6' ">
                     <input type="button" value="-" onclick="display.value += '-' " class="operator">
                 </div>
                 <div>
-                    <input type="button" value="1" onclick="evaluateNumber(1) ">
-                    <input type="button" value="2" onclick="evaluateNumber(2)">
-                    <input type="button" value="3" onclick="evaluateNumber(3)">
+                    <input type="button" value="1" onclick="display.value += '1' ">
+                    <input type="button" value="2" onclick="display.value += '2' ">
+                    <input type="button" value="3" onclick="display.value += '3' ">
                     <input type="button" value="+" onclick="display.value += '+' " class="operator">
                 </div>
                 <div>
                     <input type="button" value="00" onclick="display.value += '00' ">
-                    <input type="button" value="0" onclick="evaluateNumber(0)">
-                    <input type="button" value="." onclick="evaluateNumber('.')">
-                    <!-- <input type="button" value="=" id="equals" onclick="display.value = eval(display.value)"
-                        class="equal operator"> -->
-                    <input type="button" value="=" id="equals" onclick="checkUndefined(),evaluateInput()"
+                    <input type="button" value="0" onclick="display.value += '0' ">
+                    <input type="button" value="." onclick="display.value += '.' ">
+                    <input type="button" value="=" id="equals" onclick="display.value = eval(display.value )"
                         class="equal operator">
                 </div>
             </form>
         </div>
     </div>
+
     <script>
         //================================== Function to evaluate user input==========================
         function evaluateInput() {
             try {
                 const userInput = document.getElementById("display").value;
-                const result = eval(userInput);
+                const result = eval(userInput); // Evaluate the user's input
                 document.getElementById("display").value = result;
             } catch (error) {
+                // Handle syntax errors
                 document.getElementById("display").value = "Syntax Error";
-            }
-            console.log("error occured")
-        }
-        // ==============================dont merge function===============================
-        var isEqualClicked = false
-        function checkUndefined(){
-            isEqualClicked = true
-            let check=document.getElementById("display").value
-              let ans = eval(check)
-             document.getElementById("display").value=ans
 
-        }
-        function evaluateNumber(num){
-            let operators = /[-+*/]/;
-
-            let check = document.getElementById("display").value 
-            console.log(check.charAt(check.length - 1))
-            if( check==="undefined" ||  isEqualClicked || !operators.test(check.charAt(check.length - 1))){
-                // console.log(isEqualClicked)
-                document.getElementById("display").value=num
             }
-            else{
-                document.getElementById("display").value+=num
-            }
-            isEqualClicked=false
         }
 
-    //         let display = document.getElementById("display");
-    // let currentValue = display.value;
-    // if (currentValue === "Syntax Error" || currentValue === "undefined") {
-    //     display.value = character;
-    // } else {
-    //     display.value += character;
-    // }
+        document.getElementById("equals").addEventListener("click", evaluateInput);
 
-// ============================================AC AND DE Button ////////////////////////////////////////
+
+
+
+        function clearError() {
+
+            let clearAc = document.getElementById('clear')
+            let clearDe = document.getElementById('clear')
+            let display = document.getElementById('display').value
+
+            if (display === "") {
+
+            }
+        }
+
 
     </script>
 </body>
 
 </html>
-
